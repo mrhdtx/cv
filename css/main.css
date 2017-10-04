@@ -1,0 +1,473 @@
+/* ==========================================================================
+   Author's custom styles  - Here for our CSS styling
+   ========================================================================== */
+
+/*** GENERAL STYLINGS ***/
+
+*,
+*:before,
+*:after {
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   text-decoration:none;    
+   list-style:none;
+}
+
+.clear,
+.clear::after{
+   content: '';
+   clear: both;
+   display: block;
+}
+
+
+html{
+    font-size: 62.5%;
+    -webkit-tap-highlight-color: transparent;
+   }
+
+
+   /* Instead of using px, we are using rem measurement instead.  However, this TRICK will
+      make the em calculation to easily understanble px equivalent.
+      So font-size: 62.5% in html is equal to 16px * .625 = 10px;
+      So font-size: 140% in body is equal to 16px * 1.4 = 22.4px;
+      So 1 em = 10px, therefore 2em = 20px, 3em = 30px and so forth...
+      So 1.2 em = 12px.
+    */
+
+
+body, html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    background-color: #000;
+    background-image: url('../img/snowmountain.jpg');
+    background-size: cover;
+    background-position: top right;
+    background-attachment: fixed;
+    position: relative;
+    z-index: -10;
+}
+
+
+/*** https://designschool.canva.com/blog/100-color-combinations/ .  My color choice (27. Cheerful Brights)  ***/
+                                       /* avocado color  #258039 & neon yellow  #f3f315 */ 
+section:nth-of-type(odd) {
+    border-top: 5px solid #f3f315;  
+    border-bottom: 5px solid #f3f315; 
+    -webkit-box-shadow: 0 5px 20px #000;
+	-moz-box-shadow: 0 5px 20px #000;
+	box-shadow: 0 5px 20px #000;
+}
+
+section:nth-of-type(even) {
+    border-top: 5px solid #258039;   
+    border-bottom: 5px solid #258039;
+    -webkit-box-shadow: 0 5px 20px #000;
+	-moz-box-shadow: 0 5px 20px #000;
+	box-shadow: 0 5px 20px #000;
+}
+
+
+/* h1, h2, h3, h4, h5, h6 Styling */
+h1{ font-size: 2.4em;}   /* 1.5rem      */
+h2{ font-size: 2.0em;}   /* 1.25rem     */
+h3{ font-size: 1.4em;}   /*  .875rem    */
+h4{ font-size: 1.3em;}   /* .8125rem    */
+h5{ font-size: 1.2em;}   /* .75rem      */
+h6{ font-size: 1.0em;}   /* .625rem     */
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100vh;
+}
+
+
+/*** SIDEBAR NAVIGATION STYLING ***/
+
+/* i.toggling refers to hamburger icon */
+i.toggling{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 15px 20px 15px 15px;
+    color: red;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    opacity: .7;
+    z-index: 999;
+}
+
+i.toggling:hover{opacity: 1;}
+
+
+/* jQuery addClass: To hide menu hamburger font-awesome icon */
+.hide{visibility: hidden;}                      
+
+
+nav.sidebar{
+    position: fixed;
+    width: 250px;
+    margin-left: 0px;
+    overflow: hidden;
+    height: 100vh;
+    max-height: 100vh;
+    background-color: rgba(17,17,17,.95);
+    transition: all .3s ease-in-out;
+    z-index: 20;
+}
+
+/* nav .fa-times refers to "X" icon to close sidebar nav menu */
+nav .fa-times{
+    right: 10px;
+    top: 10px;
+    opacity: 0.6;
+    padding: 15px 20px 15px 15px;
+    color: red;
+    z-index: 999;
+    cursor: pointer;
+    position: absolute;
+    transition: all .3s ease-in-out;
+}
+
+nav .fa-times:hover{opacity: 1;}
+
+nav a h2.box{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    padding: 10px 40px;
+    display: inline-block;
+    border: 5px solid #fff;
+    font-size: 2.6em;
+    text-align: center;
+    margin-top: 17vh;
+    opacity: .9;
+    color: #f3f315!important;
+    transform: scale(.9);
+}
+
+nav a h2.box:hover{
+    transform: scale(1.1);
+}
+
+nav a h2.box span{
+    font-weight: 900;
+}
+
+nav .title{
+    margin-top: 0;
+    font-weight: 200;
+    font-size: 1.3em;
+    color: #f3f315!important;
+}
+
+nav.sidebar .sidebar-selection{
+    margin: 50px 0;
+    display: block;
+    width: 200px;
+    margin-left: 20px;
+}
+
+
+nav.sidebar .logo p{
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+
+nav.sidebar .sidebar-item a{
+    text-decoration:none;
+}
+
+nav.sidebar .sidebar-item a h5{
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 30px;
+    font-weight: 700;  
+    color: #fff;
+    border-bottom: 2px solid #258039;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+nav.sidebar .sidebar-item a h5:hover{transform: scale(1.1);}
+
+/* Highlight the selected nav menu item with yellow color & 
+   enlarged the size of the nav menu item text same as above h5 element */
+.select{ 
+    color: #f3f315!important;
+    transform: scale(1.1);
+}
+
+
+
+/*** SECTION STYLINGS ***/
+.info{position: relative;}
+
+/* Setting all Section to certain fixed size for mobile device */
+.info > section{
+    position: fixed;
+    top: 10vh;
+    left:5vw;
+    width: 90vw;
+    height: 80vh;
+    background: #ddd;
+}
+
+
+#section3 { 
+    top: 11vh;
+    height: 82vh;
+}
+
+/* Set all Section element to hidden to begin with */
+.info > section{visibility: hidden;}
+
+/* To display a particulary section that is hidden just add ".active" class */
+.active{visibility: visible!important;}
+
+
+section .row{
+    padding-top: 3px;
+}
+
+
+/* Styling flat image of me */
+section .circle{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+section .circle img{
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+}
+
+section:nth-of-type(odd) .circle img{
+    border: 3px solid #258039;    
+}
+
+section:nth-of-type(even) .circle img{
+    border: 3px solid #f3f315;    
+}
+
+section .introduction .web{
+    text-align: center!important;
+}
+
+section .introduction .web img{
+    width: 25px;
+    height: 25px;
+    margin-top: 0;
+}
+
+section > h1{
+    font-size: 2em;
+    margin-top: 15px;
+    padding-top: 15px;
+    text-shadow: 1px 1px 0px #ddd, 2px 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+section .introduction h3{
+    text-shadow: 1px 1px 6px #999, 0 0 0 #000, 1px 1px 2px #999;
+    text-align: center;
+}
+
+/* Creating the border line underneath h3 */
+section .introduction h3:after{    
+    content:'';
+    display: block;
+    width: 50px;
+    padding-top: 8px;
+    margin:0 auto 15px auto;
+    }
+
+section:nth-of-type(odd) .introduction h3:after{
+    border-bottom: 3px solid #258039;   
+}
+
+section:nth-of-type(even) .introduction h3:after{
+    border-bottom: 3px solid #f3f315;
+}
+
+section .introduction p{
+    padding: 0 12px;
+    text-align: center;
+}
+
+
+#section2 .introduction p span{
+    margin-left: 10px;
+}
+
+.hide-menu{
+    margin-left: -250px!important;
+}
+
+
+/*** CONTACT FORM STYLINGS ***/
+form label{
+    color: #333;
+    text-align: left;
+}
+
+form input{
+    height: 30px;
+    width: 230px;
+}
+
+form textarea{
+    height: 110px;
+    width: 230px;
+    resize: none;
+}
+
+form button{width: 230px;}
+
+form div > div{text-align:center!important;}
+
+
+/*** FOOTER STYLINGS ***/
+
+footer{
+    background-color: rgba(0,0,0,.025);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform:translateX(-50%);
+}
+
+
+footer p{
+    color: #fff;
+    font-weight: 900;
+    font-size: 1rem;
+    padding-top: 1rem;
+    text-shadow: 0px 0px 10px rgba(255,255,255,.5), 0px 0px 10px rgba(255,255,255,.5),0px 0px 10px rgba(255,255,255,.5);
+}
+
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media(max-width: 767px){}
+
+
+@media screen and (min-width: 468px){
+        
+    section .circle img{
+        height: 125px;
+        width: 125px;
+    }
+    
+    section .introduction .web img{
+        width: 50px;
+        height: 50px;
+    }
+      
+    section > h1{font-size: 2.7em;}
+    
+    section .introduction h3:after{    
+        margin-bottom: 15px;
+        margin:0 auto;
+    }
+    
+    section .introduction p{
+        text-align: left;
+    }
+
+    #section2 .introduction p,
+    #section3 .introduction p{
+        text-align:center!important; 
+    }
+}
+
+
+@media screen and (min-width: 768px){
+    
+    /* h1, h2, h3, h4, h5, h6 Styling */
+    h1{ font-size: 3.6em;!important}   /* 2.25rem     */
+    h2{ font-size: 2.4em;!important}   /* 1.5rem      */
+    h3{ font-size: 2.0em;!important}   /* 1.25rem     */
+    h4{ font-size: 1.8em;!important}   /* 1.125rem    */
+    h5{ font-size: 1.6em;!important}   /* 1rem = 16px */
+    h6{ font-size: 1.2em;!important}   /* .75rem      */
+
+    .info > section{
+        left: 20vw;
+        width: 70vw;
+    }
+
+    section .circle{margin-bottom: none;}
+    
+    section .circle img{
+        height: 150px;
+        width: 150px;
+    }
+    
+    section .introduction h3{text-align: left;}
+        
+    section .introduction h3:after{
+        width:65%;
+        padding-top: 5px;
+        margin:0 0 15px 0;
+    }
+       
+    section .introduction p{
+        padding: 0 30px 0 0;
+    }
+    
+
+    section .introduction .web{ text-align: left!important;}
+    
+    section .introduction .web img{
+        width: 70px;
+        height: 70px;
+    }
+    
+    #section2 .introduction p,
+    #section3 .introduction p{text-align:left!important;}
+    
+    
+    form input, form textarea, form button{
+        width: 300px;
+    }    
+    
+    form button{
+        font-size: 1.4em!important;
+        font-weight: bold!important;
+    }
+}
+
+
+@media screen and (min-width: 992px){
+    
+    section .introduction .web img{
+        width: 80px;
+        height: 80px;
+    }
+    
+    section .introduction p{
+        font-size: 1.2em;
+        line-height: 1.5em;    
+    }
+    
+}
+
+@media screen and (min-width: 1200px){}
+
