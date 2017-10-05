@@ -313,6 +313,11 @@ section .introduction p{
     margin-left: 10px;
 }
 
+#section3 .introduction p a{
+    text-decoration: none;
+    color: #258039;
+}
+
 .hide-menu{
     margin-left: -250px!important;
 }
