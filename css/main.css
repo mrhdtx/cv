@@ -226,7 +226,7 @@ nav.sidebar .sidebar-item a h5:hover{transform: scale(1.1);}
 }
 
 
-#section3 { 
+#portfolio { 
     top: 11vh;
     height: 82vh;
 }
@@ -309,11 +309,11 @@ section .introduction p{
 }
 
 
-#section2 .introduction p span{
+#experience .introduction p span{
     margin-left: 10px;
 }
 
-#section3 .introduction p a{
+#portfolio .introduction p a{
     text-decoration: none;
     color: #258039;
 }
@@ -396,8 +396,8 @@ footer p{
         text-align: left;
     }
 
-    #section2 .introduction p,
-    #section3 .introduction p{
+    #experience .introduction p,
+    #portfolio .introduction p{
         text-align:center!important; 
     }
 }
@@ -445,8 +445,8 @@ footer p{
         height: 70px;
     }
     
-    #section2 .introduction p,
-    #section3 .introduction p{text-align:left!important;}
+    #experience .introduction p,
+    #portfolio .introduction p{text-align:left!important;}
     
     
     form input, form textarea, form button{
